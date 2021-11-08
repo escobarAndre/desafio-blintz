@@ -57,51 +57,154 @@ export default {
       }
     },
     sort () {
-      console.log('work')
       if (this.selectedSort === 'Address') {
-        // eslint-disable-next-line vue/no-mutating-props
-        this.newProperties = this.properties.sort(
-          function (a, b) {
-            if (a.address > b.address) {
-              return 1
-            } else if (a.address < b.address) {
-              return -1
-            } return 0
-          })
-        this.$emit('new-properties', this.newProperties)
+        if (this.selectedFilter === 'Active') {
+          this.newProperties = this.properties.filter(function (e) {
+            return e.active === true
+          }).sort(
+            function (a, b) {
+              if (a.address > b.address) {
+                return 1
+              } else if (a.address < b.address) {
+                return -1
+              } return 0
+            })
+          this.$emit('new-properties', this.newProperties)
+        } else if (this.selectedFilter === 'Inactive') {
+          this.newProperties = this.properties.filter(function (e) {
+            return e.active === false
+          }).sort(
+            function (a, b) {
+              if (a.address > b.address) {
+                return 1
+              } else if (a.address < b.address) {
+                return -1
+              } return 0
+            })
+          this.$emit('new-properties', this.newProperties)
+        } else {
+          // eslint-disable-next-line vue/no-mutating-props
+          this.newProperties = this.properties.sort(
+            function (a, b) {
+              if (a.address > b.address) {
+                return 1
+              } else if (a.address < b.address) {
+                return -1
+              } return 0
+            })
+          this.$emit('new-properties', this.newProperties)
+        }
       } else if (this.selectedSort === 'City') {
-        // eslint-disable-next-line vue/no-mutating-props
-        this.newProperties = this.properties.sort(
-          function (a, b) {
-            if (a.city > b.city) {
-              return 1
-            } else if (a.city < b.city) {
-              return -1
-            } return 0
-          })
-        this.$emit('new-properties', this.newProperties)
+        if (this.selectedFilter === 'Active') {
+          this.newProperties = this.properties.filter(function (e) {
+            return e.active === true
+          }).sort(
+            function (a, b) {
+              if (a.city > b.city) {
+                return 1
+              } else if (a.city < b.city) {
+                return -1
+              } return 0
+            })
+          this.$emit('new-properties', this.newProperties)
+        } else if (this.selectedFilter === 'Inactive') {
+          this.newProperties = this.properties.filter(function (e) {
+            return e.active === false
+          }).sort(
+            function (a, b) {
+              if (a.city > b.city) {
+                return 1
+              } else if (a.city < b.city) {
+                return -1
+              } return 0
+            })
+          this.$emit('new-properties', this.newProperties)
+        } else {
+          // eslint-disable-next-line vue/no-mutating-props
+          this.newProperties = this.properties.sort(
+            function (a, b) {
+              if (a.city > b.city) {
+                return 1
+              } else if (a.city < b.city) {
+                return -1
+              } return 0
+            })
+          this.$emit('new-properties', this.newProperties)
+        }
       } else if (this.selectedSort === 'ZIP') {
-        // eslint-disable-next-line vue/no-mutating-props
-        this.newProperties = this.properties.sort(
-          function (a, b) {
-            if (a.zip > b.zip) {
-              return 1
-            } else if (a.zip < b.zip) {
-              return -1
-            } return 0
-          })
-        this.$emit('new-properties', this.newProperties)
+        if (this.selectedFilter === 'Active') {
+          this.newProperties = this.properties.filter(function (e) {
+            return e.active === true
+          }).sort(
+            function (a, b) {
+              if (a.zip > b.zip) {
+                return 1
+              } else if (a.zip < b.zip) {
+                return -1
+              } return 0
+            })
+          this.$emit('new-properties', this.newProperties)
+        } else if (this.selectedFilter === 'Inactive') {
+          this.newProperties = this.properties.filter(function (e) {
+            return e.active === false
+          }).sort(
+            function (a, b) {
+              if (a.zip > b.zip) {
+                return 1
+              } else if (a.zip < b.zip) {
+                return -1
+              } return 0
+            })
+          this.$emit('new-properties', this.newProperties)
+        } else {
+          // eslint-disable-next-line vue/no-mutating-props
+          this.newProperties = this.properties.sort(
+            function (a, b) {
+              if (a.zip > b.zip) {
+                return 1
+              } else if (a.zip < b.zip) {
+                return -1
+              } return 0
+            })
+          this.$emit('new-properties', this.newProperties)
+        }
       } else if (this.selectedSort === 'State') {
-        // eslint-disable-next-line vue/no-mutating-props
-        this.newProperties = this.properties.sort(
-          function (a, b) {
-            if (a.state > b.state) {
-              return 1
-            } else if (a.state < b.state) {
-              return -1
-            } return 0
-          })
-        this.$emit('new-properties', this.newProperties)
+        if (this.selectedFilter === 'Active') {
+          this.newProperties = this.properties.filter(function (e) {
+            return e.active === true
+          }).sort(
+            function (a, b) {
+              if (a.state > b.state) {
+                return 1
+              } else if (a.state < b.state) {
+                return -1
+              } return 0
+            })
+          this.$emit('new-properties', this.newProperties)
+        } else if (this.selectedFilter === 'Inactive') {
+          this.newProperties = this.properties.filter(function (e) {
+            return e.active === false
+          }).sort(
+            function (a, b) {
+              if (a.state > b.state) {
+                return 1
+              } else if (a.state < b.state) {
+                return -1
+              } return 0
+            })
+          this.$emit('new-properties', this.newProperties)
+        } else {
+          // eslint-disable-next-line vue/no-mutating-props
+          this.newProperties = this.properties.sort(
+            function (a, b) {
+              if (a.state > b.state) {
+                return 1
+              } else if (a.state < b.state) {
+                return -1
+              } return 0
+            })
+          this.$emit('new-properties', this.newProperties)
+        }
       }
     }
   },
