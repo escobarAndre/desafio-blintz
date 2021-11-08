@@ -1,4 +1,5 @@
 module.exports = {
+  
   root: true,
   env: {
     node: true
@@ -11,7 +12,9 @@ module.exports = {
     parser: 'babel-eslint'
   },
   rules: {
+    "eol-last": 0,
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
-  }
+  },
+  
 }
