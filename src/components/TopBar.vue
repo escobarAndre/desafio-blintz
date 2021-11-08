@@ -23,7 +23,7 @@
     <div>
       <div class="inline-block w-full font-bold text-xs tracking-wider text-left px-2 pb-3 mx-0 md:mx-4 md:px-4 md:pb-0">
         <p class="mb-2">SEARCH</p>
-        <input @change="search" v-model="selectedSearch" name="filter" type="text" placeholder="Search Packages" class="border w-full h-9 border-indigo-900 rounded p-3 focus:border-indigo-900">
+        <input @change="search()" v-model="selectedSearch" name="filter" type="text" placeholder="Search Packages" class="border w-full h-9 border-indigo-900 rounded p-3 focus:border-indigo-900">
       </div>
     </div>
   </div>
@@ -35,10 +35,6 @@ export default {
     this.sort()
   },
   methods: {
-    search () {
-      this.newProperties = this.properties.filter(propertie => propertie.city.includes(this.selectedSearch) | propertie.address.includes(this.selectedSearch))
-      this.$emit('new-properties', this.newProperties)
-    },
     filter () {
       if (this.selectedFilter === 'Active') {
         this.newProperties = this.properties.filter(function (e) {
@@ -210,6 +206,12 @@ export default {
   },
   props: {
     properties: Array
+  },
+  watch: {
+    selectedSearch: function () {
+      this.newProperties = this.properties.filter(propertie => propertie.city.includes(this.selectedSearch) | propertie.address.includes(this.selectedSearch))
+      this.$emit('new-properties', this.newProperties)
+    }
   },
   data () {
     return {
