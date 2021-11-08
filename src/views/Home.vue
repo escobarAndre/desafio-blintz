@@ -1,6 +1,7 @@
 <template>
   <div class="home px-0 pb-10 pt-3 md:px-7 xl:px-0 xl:px-10">
-    <top-bar :properties="allProperties" @new-properties="newProperties"></top-bar>
+    <top-bar :properties="allProperties"
+             @new-properties="newProperties"></top-bar>
     <product v-for="propertie in properties"
              :title="propertie.address"
              :subtitle="propertie.city + ',' + propertie.state + ',' + propertie.zip"
