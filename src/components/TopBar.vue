@@ -31,6 +31,9 @@
 
 <script>
 export default {
+  created: function () {
+    this.sort()
+  },
   methods: {
     search () {
       this.newProperties = this.properties.filter(propertie => propertie.city.includes(this.selectedSearch) | propertie.address.includes(this.selectedSearch))
